@@ -33,7 +33,7 @@ namespace GODepartureSigns
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Making the table layout panel double buffered prevents it from flickering when it is redrawn.
-            ControlDoubleBuffering.SetDoubleBuffered(tableLayoutPanel1);
+            ControlDoubleBuffering.SetDoubleBuffered(scheduleTableLayoutPanel);
             // Set the language to English
             GlobalSettings.CurrentLanguage = ScreenLanguage.English;
         }
@@ -76,6 +76,16 @@ namespace GODepartureSigns
             {
                 timeColumnLabel.Text = StringConstants.TimeEn;
             }
+        }
+
+        private void scheduleTableLayoutPanel_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            if (e.Row == 0)
+            {
+                e.Graphics.FillRectangle(Brushes.White, e.CellBounds);
+            }
+            Pen p = new Pen(Color.White, 2.0f);
+            e.Graphics.DrawLine(p, new Point(e.CellBounds.Left, e.CellBounds.Bottom), new Point(e.CellBounds.Right, e.CellBounds.Bottom));
         }
     }
 }

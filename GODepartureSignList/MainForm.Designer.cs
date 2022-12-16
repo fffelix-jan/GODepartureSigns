@@ -36,10 +36,19 @@ namespace GODepartureSigns
             this.trainsSubtitleLabel = new System.Windows.Forms.Label();
             this.dateTimeTimer = new System.Windows.Forms.Timer(this.components);
             this.languageToggleTimer = new System.Windows.Forms.Timer(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.scheduleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.timeColumnLabel = new System.Windows.Forms.Label();
+            this.row1TimeLabel = new System.Windows.Forms.Label();
+            this.row2TimeLabel = new System.Windows.Forms.Label();
+            this.row3TimeLabel = new System.Windows.Forms.Label();
+            this.row4TimeLabel = new System.Windows.Forms.Label();
+            this.row5TimeLabel = new System.Windows.Forms.Label();
+            this.row6TimeLabel = new System.Windows.Forms.Label();
+            this.row7TimeLabel = new System.Windows.Forms.Label();
+            this.row8TimeLabel = new System.Windows.Forms.Label();
+            this.row9TimeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.scheduleTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -56,7 +65,7 @@ namespace GODepartureSigns
             // 
             this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(480, 0);
+            this.dateLabel.Location = new System.Drawing.Point(478, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(800, 86);
             this.dateLabel.TabIndex = 1;
@@ -67,7 +76,7 @@ namespace GODepartureSigns
             // 
             this.clockLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.clockLabel.AutoSize = true;
-            this.clockLabel.Location = new System.Drawing.Point(1727, 0);
+            this.clockLabel.Location = new System.Drawing.Point(1723, 0);
             this.clockLabel.Name = "clockLabel";
             this.clockLabel.Size = new System.Drawing.Size(197, 86);
             this.clockLabel.TabIndex = 2;
@@ -94,44 +103,166 @@ namespace GODepartureSigns
             this.languageToggleTimer.Interval = 5000;
             this.languageToggleTimer.Tick += new System.EventHandler(this.languageToggleTimer_Tick);
             // 
-            // tableLayoutPanel1
+            // scheduleTableLayoutPanel
             // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.timeColumnLabel, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 109);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1920, 856);
-            this.tableLayoutPanel1.TabIndex = 4;
+            this.scheduleTableLayoutPanel.ColumnCount = 3;
+            this.scheduleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.scheduleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.scheduleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
+            this.scheduleTableLayoutPanel.Controls.Add(this.timeColumnLabel, 0, 0);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row1TimeLabel, 0, 1);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row2TimeLabel, 0, 2);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row3TimeLabel, 0, 3);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row4TimeLabel, 0, 4);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row5TimeLabel, 0, 5);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row6TimeLabel, 0, 6);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row7TimeLabel, 0, 7);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row8TimeLabel, 0, 8);
+            this.scheduleTableLayoutPanel.Controls.Add(this.row9TimeLabel, 0, 9);
+            this.scheduleTableLayoutPanel.Location = new System.Drawing.Point(0, 99);
+            this.scheduleTableLayoutPanel.Name = "scheduleTableLayoutPanel";
+            this.scheduleTableLayoutPanel.RowCount = 10;
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.scheduleTableLayoutPanel.Size = new System.Drawing.Size(1920, 856);
+            this.scheduleTableLayoutPanel.TabIndex = 4;
+            this.scheduleTableLayoutPanel.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.scheduleTableLayoutPanel_CellPaint);
             // 
             // timeColumnLabel
             // 
+            this.timeColumnLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timeColumnLabel.AutoSize = true;
-            this.timeColumnLabel.Location = new System.Drawing.Point(4, 1);
+            this.timeColumnLabel.BackColor = System.Drawing.Color.White;
+            this.timeColumnLabel.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeColumnLabel.ForeColor = System.Drawing.Color.Black;
+            this.timeColumnLabel.Location = new System.Drawing.Point(30, 10);
             this.timeColumnLabel.Name = "timeColumnLabel";
-            this.timeColumnLabel.Size = new System.Drawing.Size(180, 84);
+            this.timeColumnLabel.Size = new System.Drawing.Size(140, 65);
             this.timeColumnLabel.TabIndex = 0;
             this.timeColumnLabel.Text = "Time";
+            // 
+            // row1TimeLabel
+            // 
+            this.row1TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row1TimeLabel.AutoSize = true;
+            this.row1TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row1TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row1TimeLabel.Location = new System.Drawing.Point(30, 95);
+            this.row1TimeLabel.Name = "row1TimeLabel";
+            this.row1TimeLabel.Size = new System.Drawing.Size(140, 65);
+            this.row1TimeLabel.TabIndex = 1;
+            this.row1TimeLabel.Text = "00:01";
+            // 
+            // row2TimeLabel
+            // 
+            this.row2TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row2TimeLabel.AutoSize = true;
+            this.row2TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row2TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row2TimeLabel.Location = new System.Drawing.Point(26, 180);
+            this.row2TimeLabel.Name = "row2TimeLabel";
+            this.row2TimeLabel.Size = new System.Drawing.Size(148, 65);
+            this.row2TimeLabel.TabIndex = 2;
+            this.row2TimeLabel.Text = "00:02";
+            // 
+            // row3TimeLabel
+            // 
+            this.row3TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row3TimeLabel.AutoSize = true;
+            this.row3TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row3TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row3TimeLabel.Location = new System.Drawing.Point(26, 265);
+            this.row3TimeLabel.Name = "row3TimeLabel";
+            this.row3TimeLabel.Size = new System.Drawing.Size(148, 65);
+            this.row3TimeLabel.TabIndex = 3;
+            this.row3TimeLabel.Text = "00:03";
+            // 
+            // row4TimeLabel
+            // 
+            this.row4TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row4TimeLabel.AutoSize = true;
+            this.row4TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row4TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row4TimeLabel.Location = new System.Drawing.Point(25, 350);
+            this.row4TimeLabel.Name = "row4TimeLabel";
+            this.row4TimeLabel.Size = new System.Drawing.Size(149, 65);
+            this.row4TimeLabel.TabIndex = 4;
+            this.row4TimeLabel.Text = "00:04";
+            // 
+            // row5TimeLabel
+            // 
+            this.row5TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row5TimeLabel.AutoSize = true;
+            this.row5TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row5TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row5TimeLabel.Location = new System.Drawing.Point(26, 435);
+            this.row5TimeLabel.Name = "row5TimeLabel";
+            this.row5TimeLabel.Size = new System.Drawing.Size(148, 65);
+            this.row5TimeLabel.TabIndex = 5;
+            this.row5TimeLabel.Text = "00:05";
+            // 
+            // row6TimeLabel
+            // 
+            this.row6TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row6TimeLabel.AutoSize = true;
+            this.row6TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row6TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row6TimeLabel.Location = new System.Drawing.Point(26, 520);
+            this.row6TimeLabel.Name = "row6TimeLabel";
+            this.row6TimeLabel.Size = new System.Drawing.Size(148, 65);
+            this.row6TimeLabel.TabIndex = 6;
+            this.row6TimeLabel.Text = "00:06";
+            // 
+            // row7TimeLabel
+            // 
+            this.row7TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row7TimeLabel.AutoSize = true;
+            this.row7TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row7TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row7TimeLabel.Location = new System.Drawing.Point(26, 605);
+            this.row7TimeLabel.Name = "row7TimeLabel";
+            this.row7TimeLabel.Size = new System.Drawing.Size(147, 65);
+            this.row7TimeLabel.TabIndex = 7;
+            this.row7TimeLabel.Text = "00:07";
+            // 
+            // row8TimeLabel
+            // 
+            this.row8TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row8TimeLabel.AutoSize = true;
+            this.row8TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row8TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row8TimeLabel.Location = new System.Drawing.Point(26, 690);
+            this.row8TimeLabel.Name = "row8TimeLabel";
+            this.row8TimeLabel.Size = new System.Drawing.Size(148, 65);
+            this.row8TimeLabel.TabIndex = 8;
+            this.row8TimeLabel.Text = "00:08";
+            // 
+            // row9TimeLabel
+            // 
+            this.row9TimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.row9TimeLabel.AutoSize = true;
+            this.row9TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.row9TimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.row9TimeLabel.Location = new System.Drawing.Point(26, 778);
+            this.row9TimeLabel.Name = "row9TimeLabel";
+            this.row9TimeLabel.Size = new System.Drawing.Size(148, 65);
+            this.row9TimeLabel.TabIndex = 9;
+            this.row9TimeLabel.Text = "00:09";
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(1924, 1058);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.scheduleTableLayoutPanel);
             this.Controls.Add(this.trainsSubtitleLabel);
             this.Controls.Add(this.clockLabel);
             this.Controls.Add(this.dateLabel);
@@ -145,8 +276,8 @@ namespace GODepartureSigns
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.scheduleTableLayoutPanel.ResumeLayout(false);
+            this.scheduleTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,8 +291,17 @@ namespace GODepartureSigns
         private System.Windows.Forms.Label trainsSubtitleLabel;
         private System.Windows.Forms.Timer dateTimeTimer;
         private System.Windows.Forms.Timer languageToggleTimer;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel scheduleTableLayoutPanel;
         private System.Windows.Forms.Label timeColumnLabel;
+        private System.Windows.Forms.Label row1TimeLabel;
+        private System.Windows.Forms.Label row2TimeLabel;
+        private System.Windows.Forms.Label row3TimeLabel;
+        private System.Windows.Forms.Label row4TimeLabel;
+        private System.Windows.Forms.Label row5TimeLabel;
+        private System.Windows.Forms.Label row6TimeLabel;
+        private System.Windows.Forms.Label row7TimeLabel;
+        private System.Windows.Forms.Label row8TimeLabel;
+        private System.Windows.Forms.Label row9TimeLabel;
     }
 }
 
