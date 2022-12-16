@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="ControlDoubleBuffering.cs" />
     <Compile Include="GlobalSettings.cs" />
+    <Compile Include="LineColor.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

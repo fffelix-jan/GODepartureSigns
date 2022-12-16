@@ -36,6 +36,25 @@ namespace GODepartureSigns
             ControlDoubleBuffering.SetDoubleBuffered(scheduleTableLayoutPanel);
             // Set the language to English
             GlobalSettings.CurrentLanguage = ScreenLanguage.English;
+            // Hide the cursor
+            Cursor.Hide();
+
+            // Cursed font (just for fun, please remove)
+            // SetAllControlsFont(Controls);
+        }
+
+        // Cursed font (just for fun, please remove)
+        // Sets the font of all controls to Comic Sans MS.
+        public void SetAllControlsFont(Control.ControlCollection ctrls)
+        {
+            foreach (Control ctrl in ctrls)
+            {
+                if (ctrl.Controls != null)
+                    SetAllControlsFont(ctrl.Controls);
+
+                ctrl.Font = new Font("Comic Sans MS", ctrl.Font.Size);
+
+            }
         }
 
         // Function to refresh the date and time display
@@ -71,20 +90,38 @@ namespace GODepartureSigns
             if (lang == ScreenLanguage.French)
             {
                 timeColumnLabel.Text = StringConstants.TimeFr;
+                lineColumnLabel.Text = StringConstants.LineFr;
+                platformColumnLabel.Text = StringConstants.PlatformFr;
+                statusColumnLabel.Text = StringConstants.StatusFr;
             }
             else
             {
                 timeColumnLabel.Text = StringConstants.TimeEn;
+                lineColumnLabel.Text = StringConstants.LineEn;
+                platformColumnLabel.Text = StringConstants.PlatformEn;
+                statusColumnLabel.Text = StringConstants.StatusEn;
             }
         }
 
+        // Paints the background colors and separating lines of the table cells, as well as the colour of the "line" cells.
         private void scheduleTableLayoutPanel_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
+            Pen p = new Pen(Color.White, 2.0f);
+            // test code
+            if (e.Column == 1 && e.Row == 1)
+            {
+                    e.Graphics.FillRectangle(new SolidBrush(LineColor.LakeshoreEast), e.CellBounds);
+            }
+            if (e.Column == 1 && e.Row == 2)
+            {
+                row2LineLabel.BackColor = Color.Transparent;
+                e.Graphics.FillRectangle(new SolidBrush(LineColor.LakeshoreWest), e.CellBounds);
+            }
             if (e.Row == 0)
             {
                 e.Graphics.FillRectangle(Brushes.White, e.CellBounds);
             }
-            Pen p = new Pen(Color.White, 2.0f);
+            e.Graphics.DrawLine(p, new Point(e.CellBounds.Left, e.CellBounds.Top), new Point(e.CellBounds.Right, e.CellBounds.Top));
             e.Graphics.DrawLine(p, new Point(e.CellBounds.Left, e.CellBounds.Bottom), new Point(e.CellBounds.Right, e.CellBounds.Bottom));
         }
     }
